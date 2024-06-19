@@ -9,7 +9,7 @@ const wordDictionary = {
     explanation: "Ke lebitso la ntho efe kapa efe le LIKAROLO li peli HLOOHO le KUTU. MOHLALA: motho. THLALOSO: 'mo' ke HLOOHO 'tho' ke KUTU.",
     audioSrc: "audio/lereho.mp3"},
   "lereho_": {
-    explanation: "Ke lebitso la ntho efe kapa efe. TOKOMANE e ka tlase e le hlalositse ka botlalo. <br><br> <a class='bg-sky-400 py-2 px-2 text-white rounded-md' href='lereho.html'>PDF</a>",
+    explanation: "Ke lebitso la ntho efe kapa efe. TOKOMANE e ka tlase e le hlalositse ka botlalo. <br><br> <a class='bg-sky-400 py-2 px-2 text-white rounded-md' href='lereho.html'>Sheba PDF</a>",
     audioSrc: "audio/lereho.mp3"},
   "seemeli": {
     explanation: "Ke mofuta oa leikemisa se mefuta e 'meli SEEMELI-TU le SEEMELI-PHAFO",
