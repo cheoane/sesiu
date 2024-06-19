@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hae</title>
+  <!-- Include Tailwind CSS -->
+  <link rel="stylesheet" href="output.css" />
+  <style>
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+  
+    .carousel-item {
+      flex: 0 0 auto;
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 h-screen w-screen
+md:bg-gray-50 md:h-fit md:w-screen
+lg:bg-gray-50 lg:h-screen lg:w-screen">
+  <div class="ml-6">
+    <a href="https://www.facebook.com/profile.php?id=61559701946199" class="flex rounded-full h-8 w-8 mt-7 shadow-lg shadow-gray-700 items-center justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-facebook fill-green-900" viewBox="0 0 16 16">
+      <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"></path>
+      </svg>
+    </a>
+  </div>
+  <div class="block justify-between mt-10
+  md:block md:justify-between md:mt-10
+  lg:flex lg:justify-between lg:mt-10 lg:ml-[100px]">
+    <section class="w-screen h-fit
+    md:w-screen md:h-fit
+    lg:w-[800px] lg:h-[500px]">
+      <div class="max-w-screen h-[400px] mx-auto p-6 mt-10
+      md:max-w-[600px] md:h-[380px] md:mx-auto md:p-6 md:mt-10
+      lg:max-w-[800px] lg:h-[550px] lg:mx-auto lg:p-6 lg:-mt-8 lg:border-l-2
+      lg:border-r-2 lg:border-yellow-500">
+      <div class="flex justify-center">
+        <img src="img/logo.png" class="w-40 pt-5">
+      </div>
+        <div class="flex justify-center mt-10 mb-4 relative">
+          <input type="text" id="wordInput" class="text-xl w-full border border-blue-100 p-4 rounded-full bg-blue-100 focus:outline-none focus:ring focus:border-green-500
+          md:bg-blue-100 md:text-xl md:w-[400px] md:border md:border-blue-100 md:p-2 md:rounded-full md:focus:outline-none md:focus:ring md:focus:border-green-500
+          lg:bg-blue-100 lg:text-xl lg:w-[400px] lg:border lg:border-blue-100 lg:p-2 lg:rounded-full lg:focus:outline-none lg:focus:ring lg:focus:border-green-500" placeholder="Kenya lentsoe">
+          <!-- Heroicon search button -->
+          <button id="searchIconBtn" class="absolute right-4 md:right-20 lg:right-44 top-1/2 transform -translate-y-1/2 bg-transparent border-none cursor-pointer focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a4 4 0 1 0-8 0 4 4 0 0 0 8 0zm1 8l-4-4"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="flex justify-center mt-10">
+          <button id="searchBtn" class="bg-green-700 text-white font-extrabold px-16 py-2 rounded-md focus:outline-none hidden">Batla</button>
+        </div>
+        <div id="recentSearches" class="flex justify-center bg-white lg:w-[500px] min-h-[150px] mx-auto shadow-md rounded-md flex-wrap mt-4"></div>
+      </div>
+    
+      <script src="search.js"></script>
+      <script>
+        document.getElementById('searchIconBtn').addEventListener('click', function() {
+          document.getElementById('searchBtn').click();
+        });
+    
+        // Ensure the form submits when the search button is clicked
+        document.getElementById('searchBtn').addEventListener('click', function() {
+          // Assuming you want to submit the input value, you can handle form submission here
+          const inputValue = document.getElementById('wordInput').value;
+          console.log('Searching for:', inputValue);
+          // You can add form submission logic here
+        });
+      </script>
+    </section>
+    <section class="w-screen h-fit hidden
+    md:w-screen md:h-[500px] md:hidden
+    lg:w-[400px] lg:h-[500px] lg:block">
+      <div class="max-w-[300px] h-[560px] rounded-md shadow-md mx-auto -mt-11 bg-white p-6">
+        <h1 class="text-2xl text-yellow-500 text-center font-semibold mb-4">Khetha <span class="text-green-950">mona</span></h1>
+        <div class="overflow-y-auto max-h-[435px]" id="optionsContainer">
+          <div id="initialOptions" class="flex flex-col space-y-2">
+            <a href="#" class="btn-option text-center text-gray-600 py-2 rounded-md font-semibold hover:bg-yellow-100" data-options="mefutaBanaOptions">Bochaba</a>
+            <a href="#" class="btn-option text-center text-gray-600 py-2 rounded-md font-semibold hover:bg-yellow-100" data-options="lijoOptions">Nalane</a>
+            <a href="#" class="btn-option text-center text-gray-600 py-2 rounded-md font-semibold hover:bg-yellow-100" data-options="literekeOptions">Tseba ka Lesotho</a>
+            <!-- Add more options as needed -->
+          </div>
+          <div id="mefutaBanaOptions" class="hidden flex-col space-y-2">
+            <a href="#" class="text-center text-gray-600 py-2 rounded-md font-semibold hover:bg-yellow-100 back-to-main">Back</a>
+            <a href="mefuta_bana.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yellow-100" role="menuitem">Mefuta ea Bana</a>
+            <a href="lijo.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yellow-100" role="menuitem">Lijo tsa Basotho</a>
+            <a href="lebollo la bashemane.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yellow-100" role="menuitem">Lebollo la Bashemane</a>
+            <a href="liphoofolo tse hlaha.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yellow-100" role="menuitem">Liphoofolo tse hlaha</a>
+            <a href="lenyalo la basotho.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yellow-100" role="menuitem">Lenyalo la Basotho</a>
+            <a href="Mefuta ea lenyalo.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yellow-100" role="menuitem">Mefuta ea lenyalo</a>
+            <a href="liboko.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yellow-100" role="menuitem">Liboko</a>
+            <a href="lipapali le lipina.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yellow-100" role="menuitem">Lipapali le lipina</a>
+            <a href="Lisebelisoa tsa lapeng.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yellow-100" role="menuitem">Lisebelisoa tsa lapeng</a>
+            <a href="mats'oao a liphoofolo.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yellow-100" role="menuitem">Mats'oao a liphoofolo</a>
+            <a href="liloto ka lijo.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yellow-100" role="menuitem">Lilotho ka lijo</a>
+            <a href="Lilotho ka lisebelisoa.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yellow-100" role="menuitem">Lilotho ka lisebelisoa</a>
+            <a href="Linonyana.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yellow-100" role="menuitem">Linonyana</a>
+            <a href="maele a sesotho.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yellow-100" role="menuitem">Maele a sesotho</a>
+            <a href="maele ka khomo.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yellow-100" role="menuitem">Maele ka khomo</a>
+          </div>
+          <div id="lijoOptions" class="hidden flex-col space-y-2">
+            <a href="#" class="text-center text-gray-600 py-2 rounded-md font-semibold hover:bg-yellow-100 back-to-main">Back</a>
+            <!-- Add more options here -->
+          </div>
+          <div id="literekeOptions" class="hidden flex-col space-y-2">
+            <a href="#" class="text-center text-gray-600 py-2 rounded-md font-semibold hover:bg-yellow-100 back-to-main">Back</a>
+            <a href="litereke.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yellow-100" role="menuitem">Litereke tsa Lesotho</a>
+            <a href="Marena a se hlooho.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yellow-100" role="menuitem">Marena a sehloho</a>
+            <!-- Add more options here -->
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        // Get all option buttons
+        const optionButtons = document.querySelectorAll('.btn-option');
+      
+        // Add click event listeners to each option button
+        optionButtons.forEach(a => {
+          button.addEventListener('click', () => {
+            // Highlight the clicked button
+            optionButtons.forEach(btn => btn.classList.remove('bg-blue-500', 'text-white'));
+            button.classList.add('bg-blue-500', 'text-white');
+            
+            // Scroll to the clicked button
+            button.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          });
+        });
+      </script>
+    </section>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const optionsContainer = document.getElementById('optionsContainer');
+        const initialOptions = document.getElementById('initialOptions');
+        const optionButtons = document.querySelectorAll('.btn-option');
+        const backButtons = document.querySelectorAll('.back-to-main');
+  
+        optionButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const targetId = button.getAttribute('data-options');
+            const targetOptions = document.getElementById(targetId);
+  
+            if (targetOptions) {
+              initialOptions.classList.add('hidden');
+              targetOptions.classList.remove('hidden');
+            }
+          });
+        });
+  
+        backButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            initialOptions.classList.remove('hidden');
+            button.parentElement.classList.add('hidden');
+          });
+        });
+      });
+    </script>
+    <section class="w-screen h-fit pb-16
+    md:w-screen md:h-fit
+    lg:w-[460px] lg:hidden lg:h-[500px]">
+    <div class="flex justify-center mt-24">
+      <div class="relative inline-block text-left">
+        <button id="dropdown-button" type="button" class="inline-flex justify-center w-56 px-4 py-2 mt-10 text-xl font-bold text-green-950 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-white">
+          <span class="text-green-950">Khetha Mona</span>
+          <!-- Heroicon name: chevron-down -->
+          <svg class="-mr-1 ml-2 h-4 w-4 mt-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M10.293 14.707a1 1 0 0 1-1.414 0l-6-6a1 1 0 1 1 1.414-1.414L10 12.586l5.293-5.293a1 1 0 1 1 1.414 1.414l-6 6z" clip-rule="evenodd" />
+          </svg>
+        </button>
+      </div>
+    </div>
+      <div class="flex justify-center">
+        <div id="dropdown-menu" class="hidden mt-2 w-56 mx-auto rounded-md shadow-lg bg-white">
+          <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="dropdown-button">
+            <a href="bochaba.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Bochaba</a>
+            <a href="#" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Nalane</a>
+            <a href="tseba.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Tseba ka Lesotho</a>
+          </div>
+        </div>
+      </div>
+    
+  
+    <!-- Include JavaScript for dropdown functionality -->
+    <script>
+      const dropdownButton = document.getElementById('dropdown-button');
+      const dropdownMenu = document.getElementById('dropdown-menu');
+  
+      dropdownButton.addEventListener('click', () => {
+        dropdownMenu.classList.toggle('hidden');
+      });
+  
+      // Close the dropdown when clicking outside of it
+      window.addEventListener('click', (e) => {
+        if (!dropdownButton.contains(e.target)) {
+          dropdownMenu.classList.add('hidden');
+        }
+      });
+    </script>
+
+    
+    </section>
+  </div>
+</body>
+</html>

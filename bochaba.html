@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lipapali le lipina</title>
+  <link rel="stylesheet" href="output.css">
+</head>
+<body class="h-screen bg-gray-100">
+  <section class="w-screen h-fit pt-2
+    md:w-screen md:h-[500px]
+    lg:w-screen lg:h-[500px] lg:block">
+    <button id="backButton" class="flex items-center justify-center bg-white p-3 ml-2 rounded-md shadow-md shadow-gray-200">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-6 h-6 stroke-green-700">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+      </svg>
+    </button>
+  
+    <script>
+      document.getElementById('backButton').addEventListener('click', function() {
+        window.history.back();
+      });
+    </script>
+    <h1 class="text-3xl text-yellow-500 font-extrabold text-center -mt-8
+        md:text-5xl md:text-yellow-500 md:font-extrabold md:text-center md:-mt-8
+        lg:text-5xl lg:text-yellow-500 lg:font-extrabold lg:text-center lg:-mt-8">Bochaba</h1>
+      <div class="max-w-full h-[450px] mx-auto mt-11 bg-white shadow-md rounded-md p-6
+      md:w-[400px] md:h-[450px] md:mx-auto md:mt-11 md:bg-white md:shadow-md md:rounded-md md:p-6">
+        <h1 class="text-2xl text-center text-yellow-500 font-semibold mb-4">Khetha <span class="text-green-950">mona</span></h1>
+        <div id="optionsContainer" class="overflow-y-auto max-h-80">
+          <div class="flex flex-col space-y-2">
+            <a href="mefuta_bana.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Mefuta ea Bana</a>
+            <a href="lijo.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Lijo tsa Basotho</a>
+            <a href="litereke.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Litereke tsa Lesotho</a>
+            <a href="lebollo la bashemane.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Lebollo la Bashemane</a>
+            <a href="liphoofolo tse hlaha.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Liphoofolo tse hlaha</a>
+            <a href="lenyalo la basotho.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Lenyalo la Basotho</a>
+            <a href="Mefuta ea lenyalo.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Mefuta ea lenyalo</a>
+            <a href="Marena a se hlooho.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Marena a sehloho</a>
+            <a href="liboko.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Liboko</a>
+            <a href="lipapali le lipina.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Lipapali le lipina</a>
+            <a href="Lisebelisoa tsa lapeng.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Lisebelisoa tsa lapeng</a>
+            <a href="mats'oao a liphoofolo.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Mats'oao a liphoofolo</a>
+            <a href="liloto ka lijo.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Lilotho ka lijo</a>
+            <a href="Lilotho ka lisebelisoa.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Lilotho ka lisebelisoa</a>
+            <a href="Linonyana.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Linonyana</a>
+            <a href="maele a sesotho.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Maele a sesotho</a>
+            <a href="maele ka khomo.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Maele ka khomo</a>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        // Get all option buttons
+        const optionButtons = document.querySelectorAll('.btn-option');
+      
+        // Add click event listeners to each option button
+        optionButtons.forEach(a => {
+          button.addEventListener('click', () => {
+            // Highlight the clicked button
+            optionButtons.forEach(btn => btn.classList.remove('bg-blue-500', 'text-white'));
+            button.classList.add('bg-blue-500', 'text-white');
+            
+            // Scroll to the clicked button
+            button.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          });
+        });
+      </script>
+    </section>
+  
+</bodyh>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liboko</title>
+
+  <link rel="stylesheet" href="output.css" />
+
+  <style>
+    .hidden {
+      display: none;
+    }
+    .scr {
+      overflow-y: auto; /* Make the section scrollable vertically */
+    }
+  </style>
+  
+
+</head>
+<body class="bg-gray-100">
+  <section class="h-full bg-gray-100 pt-2
+    md:h-screen md:bg-gray-100
+    lg:h-screen lg:bg-gray-100">
+    <button id="backButton" class="flex items-center justify-center bg-white p-3 ml-2 rounded-md shadow-md shadow-gray-200">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-6 h-6 stroke-green-700">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+      </svg>
+    </button>
+  
+    <script>
+      document.getElementById('backButton').addEventListener('click', function() {
+        window.history.back();
+      });
+    </script>
+      <div>
+        <h1 class="text-3xl text-gray-500 font-extrabold text-center pt-8
+        md:text-5xl md:text-gray-500 md:font-extrabold md:text-center md:pt-8
+        lg:text-5xl lg:text-gray-500 lg:font-extrabold lg:text-center lg:pt-8"><span class="text-green-700">Liboko</span></h1>
+        <div class="flex justify-center">
+          <div class="relative inline-block text-left mt-2">
+            <button type="button" class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-xl font-medium text-gray-700 hover:bg-gray-50" id="options-button" aria-expanded="true" aria-haspopup="true" onclick="toggleDropdown()">
+              Mefuta ea <span id="button-text" class="text-green-700 font-extrabold">Options</span>
+              <svg class="-mr-1 ml-2 mt-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </button>
+            <div class="flex justify-center">
+              <div id="dropdownMenu" class="scr text-center text-base  absolute mt-2 w-56 h-[400px] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden">
+                <div class="py-1" role="none" id="optionsMenu">
+                  <!-- Options items will be populated by JavaScript -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="testimonials" class="container mx-auto pt-8">
+          <div class="grid grid-cols-1 gap-6
+          md:grid md:grid-cols-1 md:gap-6
+          lg:grid lg:grid-cols-1 lg:gap-6">
+            <div id="testimonial1" class="bg-white rounded-lg shadow-md p-6 block items-center h-[400px] w-full mx-auto
+            md:bg-white md:rounded-md md:shadow-md md:shadow-green-600 md:p-6 md:flex md:items-center md:h-[300px] md:w-[600px] md:mx-auto
+            lg:bg-white lg:rounded-lg lg:shadow-md lg:shadow-green-600 lg:flex lg:items-center lg:h-[400px] lg:w-[800px] lg:mx-auto ">
+            <div class="">
+              <p id="testimonial-author1" class="text-green-700 font-semibold text-2xl text-center
+              md:text-green-700 md:font-semibold md:text-4xl md:text-left
+              lg:text-green-700 lg:font-semibold lg:text-4xl lg:text-left"></p>
+              <p id="testimonial-text1" class="text-xl text-gray-500 font-semibold w-full text-center
+              md:text-xl md:w-[260px] md:text-gray-500 md:font-semibold md:text-left
+              lg:text-xl lg:w-[360px] lg:text-gray-500 lg:font-semibold lg:text-left"></p>
+            </div>
+              <div class="flex justify-center
+              md:mr-4
+              lg:mr-4">
+                <img id="testimonial-image1" src="" alt="Profile Image" class="block rounded-md w-[220px] h-[200px]
+                md:block md:rounded-lg md:w-[260px] md:h-[260px]
+                lg:block lg:rounded-lg lg:w-[360px] lg:h-[360px]
+                xl:block xl:rounded-lg lg:my-10 xl:w-[360px] xl:h-[360px]">
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-between px-4"> 
+            <div class="flex justify-start mt-6">
+              <button id="back-btn" class="bg-green-700 text-white font-bold py-3 px-4 rounded">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                 class="w-6 h-6">
+                 <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                </svg>
+              </button>
+            </div>
+            <div class="flex justify-end mt-6">
+              <button id="next-btn" class="bg-green-700 text-white font-bold py-3 px-4 rounded">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                  class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        
+      <script>
+        const testimonials = [
+          {
+            text: "'Mutla",
+            author: "Bafokeng",
+            image: "./img/liboko/mutla.jpg",
+            options: [
+              { name: "Ba Mahooana", url: "Bafokeng ba mahooana.html" },
+              { name: "Ba ba Molise", url: "ba molise.html" },
+              { name: "Ba 'Mamorareli'a Phole", url: "phole.html" },
+              { name: "Ba ha Makara", url: "makara.html" },
+              { name: "Ba 'Mapulungoan'a Phahla", url: "phahla.html" },
+              { name: "Ba 'Mats'eele oa Lekotoane", url: "lekotoana.html" },
+              { name: "Ba Mahase", url: "mahase.html" },
+              { name: "Ba 'Mantsukunyane", url: "ntsukunyane.html" },
+              { name: "Ba Ts'ele", url: "tsele.html" },
+              { name: "Ba Maoto-mane", url: "maoto-mane.html" },
+              { name: "Ba Molalatsi", url: "molalatsi.html" },
+              { name: "Ba Mokomana", url: "mokomana.html" },
+              { name: "Ba 'Mamorokonyane", url: "mamorokonyane.html" },
+              { name: "Ba Mokhali", url: "mokhali.html" },
+              { name: "Ba Ts'oana", url: "tsoana.html" },
+              { name: "Ba Manti", url: "manti.html" },
+              { name: "Ba 'Mamaotoana", url: "mamaotoana.html" },
+              { name: "Ba ha Manti", url: "manti.html" },
+              { name: "Ba ha Mantia 'Mope", url: "mope.html" },
+            ]
+          },
+          {
+            text: "Kuena",
+            author: "Bakoena",
+            image: "./img/liboko/kuena.jpg",
+            options: [
+              { name: "Ba Molibeli", url: "molibeli.html" },
+              { name: "Ba Monaheng", url: "monaheng.html" },
+              { name: "Ba Marabeng", url: "marabeng.html" },
+              { name: "Ba Napo", url: "napo.html" },
+              { name: "Ba Mokoteli", url: "mokoteli.html" },
+              { name: "Ba 'Mathamae", url: "mathamae.html" },
+              { name: "Ba 'Mantsane", url: "mantsane.html" },
+              { name: "Ba Maieane", url: "maieane.html" },
+              { name: "Ba Makhetheng", url: "makhetheng.html" },
+              { name: "Ba Nkuts'ooana", url: "nkutsooana.html" },
+            ]
+            
+          },
+          {
+            text: "Tlou",
+            author: "Batloung",
+            image: "./img/liboko/tlou.jpg",
+            options: [
+              { name: "Ba Masimola", url: "masimola.html" },
+              { name: "Ba sejake", url: "sejake.html" },
+              { name: "Ba 'Mantoi", url: "mantoi.html" },
+              { name: "Ba Mtimkulu", url: "mtimkulu.html" }
+            ]
+          },
+          {
+            text: "Tau",
+            author: "Bataung",
+            image: "./img/liboko/tau.jpg",
+            options: [
+              { name: "Ba 'Marasheshe", url: "marasheshe.html" },
+              { name: "Ba Hlalele", url: "hlalele.html" },
+              { name: "Ba Raphiri", url: "raphiri.html" },
+              { name: "Motaung", url: "motaung.html" },
+              { name: "Ba Lekolokotoana", url: "lekolokotoana.html" },
+              { name: "Ba Ramokhele oa Maphoto", url: "maphoto.html" },
+              { name: "Ba 'Mamophethe'a Rathulo", url: "rathulo.html" },
+              { name: "Ba 'Mamolete", url: "molete.html" },
+              { name: "Ba Sefatsa", url: "sefatsa.html" },
+              { name: "Ba Nthethe'a Morapeli", url: "morapeli.html" }
+            ]
+          },
+          {
+            text: "Kuena",
+            author: "Bahlakoana",
+            image: "./img/liboko/kuena.jpg",
+            options: [
+              { name: "Ba Mahaseng", url: "mahaseng.html" },
+              { name: "Ba pholo ea lisema", url: "lisema.html" },
+              { name: "Ba Monaheng", url: "monaheng.html" }
+            ]
+          },
+          {
+            text: "Khoho",
+            author: "Makholokoe",
+            image: "./img/liboko/khoho.jpg",
+            options: [
+              { name: "Option 1", url: "page1.html" },
+              { name: "Option 2", url: "page2.html" },
+              { name: "Option 3", url: "page3.html" }
+            ]
+          },
+          {
+            text: "Mokopu",
+            author: "Makhoakhoa",
+            image: "./img/liboko/mokopu.jpg",
+            options: [
+              { name: "A Selimo Nthole", url: "nthole.html" },
+            ]
+          },
+          {
+            text: "Phuthi",
+            author: "Baphuthing",
+            image: "./img/liboko/phuthi.jpg",
+            options: [
+              { name: "Ba Sehooe sa Matsasa", url: "masooe.html" },
+            ]
+          },
+          {
+            text: "Kubu",
+            author: "Bakubung",
+            image: "./img/liboko/kubu.jpg",
+            options: [
+              { name: "Ba 'Mamotlhamatsana", url: "mamotlhamatsana.html" },
+            ]
+          },
+          {
+            text: "Lenong",
+            author: "Bakhatla",
+            image: "./img/liboko/lenong.jpg",
+            options: [
+              { name: "Ba Mankoana", url: "mankoana.html" },
+              { name: "Ba Kotsoana", url: "Kotsoana.html" },
+              { name: "Bakhatla", url: "Makhatla.html" }
+            ]
+          },
+          {
+            text: "Nare",
+            author: "Banareng",
+            image: "./img/liboko/nare.jpg",
+            options: [
+              { name: "Option 1", url: "page1.html" },
+              { name: "Option 2", url: "page2.html" },
+              { name: "Option 3", url: "page3.html" }
+            ]
+          },
+          {
+            text: "Katse",
+            author: "Basia",
+            image: "./img/liboko/katse.jpg",
+            options: [
+              { name: "Ba Motobatsi", url: "motobatse.html" },
+            ]
+          },
+          {
+            text: "Ts'oene",
+            author: "Bats'oeneng",
+            image: "./img/liboko/tsoene.jpg",
+            options: [
+              { name: "Ba Khiba", url: "khiba.html" },
+              { name: "Batsoeneng", url: "motsoeneng.html" },
+              { name: "Ba 'Matlapa le halima", url: "halime.html" }
+            ]
+          },
+          {
+            text: "Nkoe",
+            author: "Batlokoa",
+            image: "./img/liboko/nkoe.jpg",
+            options: [
+              { name: "Ba ha Sebiloane", url: "sebiloane.html" },
+              { name: "Ba ha Molefe", url: "molefee.html" }
+            ]
+          },
+          // Add more testimonials as needed
+        ];
+
+        let currentIndex = 0;
+
+function displayTestimonials(index) {
+  const testimonial = testimonials[index];
+  const testimonialElement = document.getElementById('testimonial1');
+  testimonialElement.querySelector('.text-xl').innerText = testimonial.text;
+  testimonialElement.querySelector('.text-green-700').innerText = " " + testimonial.author;
+  testimonialElement.querySelector('img').src = testimonial.image;
+
+  document.getElementById('button-text').innerText = ":  " + testimonial.author;
+
+  // Populate options
+  const optionsMenu = document.getElementById('optionsMenu');
+  optionsMenu.innerHTML = ''; // Clear previous options
+  testimonial.options.forEach(option => {
+    const anchor = document.createElement('a');
+    anchor.href = option.url; // Set the URL
+    anchor.className = "block px-2 font-semibold py-2 text-base text-gray-700 hover:bg-green-100";
+    anchor.textContent = option.name;
+    optionsMenu.appendChild(anchor);
+  });
+}
+
+function toggleDropdown() {
+  const dropdownMenu = document.getElementById('dropdownMenu');
+  dropdownMenu.classList.toggle('hidden');
+}
+
+function showNextTestimonials() {
+  currentIndex = (currentIndex + 1) % testimonials.length;
+  displayTestimonials(currentIndex);
+}
+
+function showBackTestimonials() {
+  currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+  displayTestimonials(currentIndex);
+}
+
+window.onload = function() {
+  displayTestimonials(currentIndex);
+  document.getElementById('next-btn').addEventListener('click', showNextTestimonials);
+  document.getElementById('back-btn').addEventListener('click', showBackTestimonials);
+};
+
+
+      </script>
+    </section>
+  
+</body>
+</html>

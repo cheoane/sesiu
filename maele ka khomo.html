@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maele ka khomo</title>
+  <link rel="stylesheet" href="output.css" />
+</head>
+<body class="bg-gray-100">
+  <section class="h-full bg-gray-100 pt-2 md:h-screen md:bg-gray-100 lg:h-screen lg:bg-gray-100">
+    <div>
+      <button id="backButton" class="flex items-center justify-center bg-white p-3 ml-2 rounded-md shadow-md shadow-gray-200">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 stroke-green-700">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+        </svg>
+      </button>
+      
+      <script>
+        document.getElementById('backButton').addEventListener('click', function() {
+          window.history.back();
+        });
+      </script>
+
+      <h1 class="text-3xl text-yellow-500 font-extrabold text-center pt-8 md:text-5xl md:text-yellow-500 md:font-extrabold md:text-center md:pt-8 lg:text-5xl lg:text-yellow-500 lg:font-extrabold lg:text-center lg:pt-8">Mefuta ea <span class="text-green-950">Maele ka </span> Khomo</h1>
+      
+      <div id="testimonials" class="container mx-auto pt-10 h-full overflow-y-auto">
+        <div class="grid grid-cols-1 gap-6">
+          <div id="testimonialContainer">
+            <!-- Testimonial template (empty initially) -->
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-between px-4"> 
+        <div class="flex justify-start mt-6">
+          <button id="back-btn" class="bg-green-700 text-white font-bold py-3 px-4 rounded hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+            </svg>
+          </button>
+        </div>
+        <div class="flex justify-end mt-6">
+          <button id="next-btn" class="bg-green-700 text-white font-bold py-3 px-4 rounded hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const testimonials = [
+      {
+  text: "TLHALOSO: Ha se hangata a ka futsang motsoali ka makhabane.",
+  author: "Khomo ea lebese ha e itsoale"
+},
+{
+  text: "TLHALOSO: Monga mosebetsi o tiisa ho feta batho ba bang.",
+  author: "Lefura la khomo le psheisa monga lona"
+},
+{
+  text: "TLHALOSO: Bophelo ba motho bo bohlokoa ho feta leruo.",
+  author: "Khomo e thibela lerumo."
+},
+{
+  text: "TLHALOSO: Ke lekunutu kapa pinyane",
+  author: "Nama e ka mpeng ho khomo."
+},
+{
+  text: "TLHALOSO: Monna a ka nyala moqekoa a holileng ho mo thusa",
+  author: "Moketa khomo o nonela tlhakong"
+},
+{
+  text: "TLHALOSO: Motho a senyang nako a etsa se sa motsoeleng molemo.",
+  author: "Ke u tsoela khomo."
+},
+{
+  text: "TLHALOSO: Ke ho senyeheloa",
+  author: "Ho tlola khomo"
+},
+{
+  text: "TLHALOSO: Ho boleloa motho a phelang litsietsing kapa a hlorisoang.",
+  author: "Khomo li ne li tseba monoang"
+},
+{
+  text: "TLALOSO: Batho ba sebetsa ba ntse ba khutlela hae",
+  author: "Khomo lija tika-motse"
+},
+{
+  text: "TLHALOSO: Phoofolo e nonneng 'me e le ntle",
+  author: "Khomo ea senona le tlhako"
+},
+{
+  text: "Hoseng haholo",
+  author: "Bosiu ba naka tsa khomo"
+},
+{
+  text: "TLHALOSO: Motho a atlehileng pele ho batho ba bang o ntse a ts'oana hantle le a atlehang kamorao ho eena",
+  author: "Khomo ha lina motloa pele"
+},
+{
+  text: "TLHALOSO: Ngoana ea sa holelang habo, ha holile o khutle habo.",
+  author: "Khomo boela hae u holile"
+},
+{
+  text: "TLHALOSO: Motho e mong le e mong ea fihlang moreneng ka mathata a rarolloa",
+  author: "Moerna ke khomo ea se hangoa ke bohle."
+},
+{
+  text: "TLHALOSO: Motho u ts'oaroa ka lipuo",
+  author: "Khomo e ts'oaroa ke linaka"
+},
+{
+  text: "TLHALOSO: Khomo tse hapiloeng lia amoheloa ho ba li fuang.",
+  author: "Khomo tsa lira ha lina moketahali"
+},
+{
+  text: "TLHALOSO: Motho a kalang ba bang ka leqhoko hore ba mo otle e be ba molefa kamora ho mo otla.",
+  author: "Ho batla khomo ka 'mele."
+},
+{
+  text: "TLHALOSO: Khomo ha e shoele ha e lahloe empa ea jeoa.",
+  author: "Lebitla la khomo ke molomo"
+},
+{
+  text: "TLHALOSO: Thepa ke leruo la ba ngoana moshemane ha le hapuoe hobane ha hola u tla le batla.",
+  author: "Khomo tsa moshemane ha li jeoe"
+},
+{
+  text: "TLHALOSO: Tsa bohlokoa li hloka ho sireletsoa",
+  author: "Khomo ha ena boroko"
+},
+{
+  text: "TLHALOSO: Litsibi ha li kopane lia qabana",
+  author: "Khomo li hlabana maqhubu sakeng"
+},
+{
+  text: "TLHALOSO: Hobua 'nete",
+  author: "Ho opa khomo lenaka"
+},
+{
+  text: "TLHALOSO: Motho a le mong a etsetsang ba bang molemo.",
+  author: "Khomo li jeoa ka ngoana ale mong"
+},
+{
+  text: "TLHALOSO: Litaba ha li bua ha kebe li bue hore li fele.",
+  author: "Khomo ha e nye bolokoe kaofela"
+},
+{
+  text: "TLHALOSO: Ha motho a hlokahetse u hlabeloa khomo hore e mo felehetse.",
+  author: "Ha le fete khomo leje motho"
+},
+
+        // Add more testimonials as needed
+      ];
+
+      let currentIndex = 0;
+
+      function displayTestimonials() {
+        const testimonialContainer = document.getElementById('testimonialContainer');
+        testimonialContainer.innerHTML = ''; // Clear previous testimonials
+        testimonials.forEach((testimonial, index) => {
+          const testimonialElement = document.createElement('div');
+          testimonialElement.className = 'bg-white rounded-lg shadow-md p-6 block items-center h-[400px] w-full mx-auto mt-6 md:bg-white md:rounded-md md:shadow-md md:p-6 md:flex md:items-center md:h-[300px] md:w-[600px] md:mx-auto lg:bg-white lg:rounded-lg lg:shadow-md lg:flex lg:items-center lg:h-[400px] lg:w-[800px] lg:mx-auto';
+          
+          testimonialElement.innerHTML = `
+            <div class="w-full">
+              <p class="text-green-950 text-center font-semibold text-3xl mt-6
+               md:text-green-950 md:font-semibold md:text-4xl md:text-center
+                lg:text-green-950 lg:font-semibold lg:text-4xl lg:text-center">${testimonial.author}</p>
+              <p class="text-xl text-center text-gray-500 font-semibold mt-6">${testimonial.text}</p>
+            </div>
+          `;
+          
+          testimonialContainer.appendChild(testimonialElement);
+        });
+      }
+
+      function showNextTestimonials() {
+        currentIndex = (currentIndex + 1) % testimonials.length;
+        displayTestimonials(currentIndex);
+      }
+
+      function showBackTestimonials() {
+        currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+        displayTestimonials(currentIndex);
+      }
+
+      window.onload = function() {
+        displayTestimonials();
+        document.getElementById('next-btn').addEventListener('click', showNextTestimonials);
+        document.getElementById('back-btn').addEventListener('click', showBackTestimonials);
+      };
+      function styleCapitalWords(text) {
+        return text.replace(/\b[A-Z]+\b/g, (match) => {
+          return `<span style="font-weight:bold; color:#013220;">${match}</span>`;
+        });
+      }
+
+    </script>
+  </section>
+</body>
+</html>

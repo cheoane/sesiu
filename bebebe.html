@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="output.css">
+  <title>Bebebe</title>
+</head>
+<body class="bg-gray-50">
+  <section class="pt-2">
+    <div>
+      <button id="backButton" class="flex items-center justify-center bg-white p-3 ml-2 rounded-md shadow-md shadow-gray-200">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="w-6 h-6 stroke-green-700">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+        </svg>
+      </button>
+    
+      <script>
+        document.getElementById('backButton').addEventListener('click', function() {
+          window.history.back();
+        });
+      </script> 
+    
+    <h1 class="font-extrabold text-4xl text-center text-yellow-500 mt-4">Bebebe</h1>
+    <div class="w-screen h-[400px] mx-auto my-8 bg-white shadow-md
+    md:w-[400px] md:h-[500px] md:mx-auto md:my-8 md:bg-white md:rounded-md md:shadow-md
+    lg:w-[500px] lg:h-[600px] lg:mx-auto lg:my-8 lg:bg-white lg:rounded-md lg:shadow-md">
+      <div class="flex justify-center">
+        <img class="h-[300px] w-[300px] rounded-md mt-12
+        md:h-[300px] md:w-[300] md:rounded-md md:mt-12
+        lg:h-[400px] lg:w-[400px] lg:rounded-md lg:mt-12" src="img/litho/bebebe.jpg">
+      </div>
+    </div>
+  </section>
+  
+</body>
+</html>

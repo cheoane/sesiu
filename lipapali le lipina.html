@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lipapali le lipina</title>
+  <link rel="stylesheet" href="output.css">
+</head>
+<body class="h-screen bg-gray-100">
+  <section class="w-screen h-fit pt-2
+    md:w-screen md:h-[500px]
+    lg:w-screen lg:h-[500px] lg:block">
+    <button id="backButton" class="flex items-center justify-center bg-white p-3 ml-2 rounded-md shadow-md shadow-gray-200">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-6 h-6 stroke-green-700">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+      </svg>
+    </button>
+  
+    <script>
+      document.getElementById('backButton').addEventListener('click', function() {
+        window.history.back();
+      });
+    </script>
+    <h1 class="text-3xl text-gray-500 font-extrabold text-center pt-8
+        md:text-5xl md:text-gray-500 md:font-extrabold md:text-center md:pt-8
+        lg:text-5xl lg:text-gray-500 lg:font-extrabold lg:text-center lg:pt-8">Lipapali le lipina tsa <span class="text-green-700">Basotho</span></h1>
+      <div class="max-w-[300px] h-[300px] mx-auto mt-11 bg-white shadow-md rounded-md p-6">
+        <h1 class="text-2xl text-center font-semibold mb-4">Khetha <span class="text-green-700">mona</span></h1>
+        <div id="optionsContainer" class="overflow-y-auto max-h-48">
+          <div class="flex flex-col space-y-2">
+            <a href="lipapali tsa basotho.html" class="btn-option text-center text-gray-600 py-2 rounded-md font-semibold hover:bg-green-100">Lipapali tsa Basotho</a>
+            <a href="lipina tsa basotho.html" class="btn-option text-center text-gray-600 py-2 rounded-md font-semibold hover:bg-green-100">Lipina tsa Basotho</a>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        // Get all option buttons
+        const optionButtons = document.querySelectorAll('.btn-option');
+      
+        // Add click event listeners to each option button
+        optionButtons.forEach(a => {
+          button.addEventListener('click', () => {
+            // Highlight the clicked button
+            optionButtons.forEach(btn => btn.classList.remove('bg-blue-500', 'text-white'));
+            button.classList.add('bg-blue-500', 'text-white');
+            
+            // Scroll to the clicked button
+            button.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          });
+        });
+      </script>
+    </section>
+  
+</bodyh>
+</html>

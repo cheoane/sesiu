@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lijo tsa Basotho</title>
+
+  <link rel="stylesheet" href="output.css" />
+
+  <style>
+    /* Add custom styles for vertical scrolling */
+    #testimonials {
+      max-height: 100%; /* Adjust the height as needed */
+      overflow-y: scroll;
+    }
+    /* Hide the scrollbar, if needed */
+    #testimonials::-webkit-scrollbar {
+      display: none;
+    }
+    #testimonials {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <section class="h-full bg-gray-100 pt-2
+    md:h-screen md:bg-gray-100
+    lg:h-screen lg:bg-gray-100">
+    <button id="backButton" class="flex items-center justify-center bg-white p-3 ml-2 rounded-md shadow-md shadow-gray-200">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-6 h-6 stroke-green-700">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+      </svg>
+    </button>
+  
+    <script>
+      document.getElementById('backButton').addEventListener('click', function() {
+        window.history.back();
+      });
+    </script>
+    <div>
+      <h1 class="text-3xl text-yellow-500 font-extrabold text-center -mt-12
+      md:text-5xl md:text-yellow-500 md:font-extrabold md:text-center md:-mt-12
+      lg:text-5xl lg:text-yellow-500 lg:font-extrabold lg:text-center lg:-mt-12">Lijo tsa <span class="text-green-950">Basotho</span></h1>
+      <div id="testimonials" class="container mx-auto pt-4">
+        <div class="grid grid-cols-1 gap-6
+        md:grid md:grid-cols-1 md:gap-6
+        lg:grid lg:grid-cols-1 lg:gap-6">
+          <div id="testimonial1" class="bg-white rounded-lg shadow-md p-6 block items-center h-full w-full mx-auto
+          md:bg-white md:rounded-md md:shadow-md md:shadow-green-600 md:p-6 md:flex md:items-center md:h-full md:w-[600px] md:mx-auto
+          lg:bg-white lg:rounded-lg lg:shadow-md lg:shadow-green-600 lg:flex lg:items-center lg:h-full lg:w-[800px] lg:mx-auto ">
+            <div class="flex justify-center
+            md:mr-4
+            lg:mr-4">
+              <img id="testimonial-image1" src="" alt="Profile Image" class="block rounded-md w-[220px] h-[200px]
+              md:block md:rounded-lg md:w-[260px] md:h-[260px]
+              lg:block lg:rounded-lg lg:w-[360px] lg:h-[360px]
+              xl:block xl:rounded-lg lg:my-10 xl:w-[360px] xl:h-[360px]">
+            </div>
+            <div class="">
+              <p id="testimonial-author1" class="text-yellow-600 font-semibold text-2xl text-center
+              md:text-yellow-600 md:font-semibold md:text-4xl md:text-left
+              lg:text-yellow-600 lg:font-semibold lg:text-4xl lg:text-left"></p>
+              <p id="testimonial-text1" class="text-xl w-full text-center
+              md:text-xl md:w-[260px] md:text-left
+              lg:text-xl lg:w-[360px] lg:text-left"></p>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-between px-4"> 
+          <div class="flex justify-start mt-6">
+            <button id="back-btn" class="bg-green-700 text-white font-bold py-3 px-4 rounded">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+               class="w-6 h-6">
+               <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+              </svg>
+            </button>
+          </div>
+          <div class="flex justify-end mt-6">
+            <button id="next-btn" class="bg-green-700 text-white font-bold py-3 px-4 rounded">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <script>
+      const testimonials = [
+        {
+          text: "Ke likhobe tsa poone.",
+          author: "Qhubu",
+          image: "./img/lijo/qhubu.jpg"
+        },
+        {
+          text: "Ke nama e ileng ea omisoa pele.",
+          author: "Lihoapa",
+          image: "./img/lijo/lihoapa.jpg"
+        },
+        {
+          text: "Ke seno se tahang.",
+          author: "Joala",
+          image: "./img/lijo/joala.jpg"
+        },
+        {
+          text: "Ke poone ea lehoetla e apehiloeng e le ngata.",
+          author: "Lefotho",
+          image: "./img/lijo/lefotho.jpg"
+        },
+        {
+          text: "Ke motoho bolila.",
+          author: "Seqhaqhabola",
+          image: "./img/lijo/seqhaqhabola.jpg"
+        },
+        {
+          text: "Lesheshele le thata la phoofo e kopantsoeng le mahleu tsa phehelloa 'moho.",
+          author: "Qolosi",
+          image: "./img/lijo/qolosi.jpg"
+        },
+        {
+          text: "Ke mokopu oa lephutsi o sokiloeng",
+          author: "Sekele",
+          image: "./img/lijo/sekele.jpg"
+        },
+        {
+          text: "Ke moko le masapo a kokonoang ke batho ba baholo ba lelapa ha khomo e hlabiloe ho entsoe mokete",
+          author: "Likhe",
+          image: "./img/lijo/likhe.jpg"
+        },
+        {
+          text: "Ke mabele a ileng a khaoletsoa ke lebabo a ntse a le lehoetla",
+          author: "Talane",
+          image: "./img/lijo/talane.jpg"
+        },
+        {
+          text: "Ke mabolotsana a mokopu a phehoang a khabetsoe a kopanngoe le lihaba tsa mokopu.",
+          author: "Lepu",
+          image: "./img/lijo/lepu.jpg"
+        },
+        {
+          text: "Ke bohobe ba poone ea lehoetla e nepotsoeng.",
+          author: "Monepoloana",
+          image: "./img/lijo/monepoloana.jpg"
+        },
+        {
+          text: "Ke mokopu oa solotsi o apeheletsoeng le khokotla.",
+          author: "Likhetso",
+          image: "./img/lijo/likhetso.jpg"
+        },
+        {
+          text: "Ke lijo tse jeoang moketeng oa bale.",
+          author: "Kaliana",
+          image: "./img/lijo/kaliana.jpg"
+        },
+        {
+          text: "Ke tsa poone kapa tsa linaoa kapa tsa linoa tse kopantsoeng le poone.",
+          author: "Likhobe",
+          image: "./img/lijo/likhobe.jpg"
+        },
+        {
+          text: "Ke lihaba tsa mokopu tse omisitsoeng tsa siloa ho etsoa phofo ea faeloa le phoofo ea poone tsa sokeloa 'moho.",
+          author: "Setjabane",
+          image: "./img/lijo/setjebane.jpg"
+        },
+        {
+          text: "Ke nama e sehiloeng hohle lithong tsa khomo ho ea tsoa ho likahare.",
+          author: "Matlala",
+          image: "./img/lijo/matlala.jpg"
+        },
+        {
+          text: "Ke likhobe tsa mabele tse ileng tsa siloa li e so butsoe hantle tsa nto phehoa hape.",
+          author: "Mophothula",
+          image: "./img/lijo/mothula.jpg"
+        },
+        {
+          text: "Ke likhobe tsa mabele tse kopantsoeng le lebese.",
+          author: "Moteketo",
+          image: "./img/lijo/moteketo.jpg"
+        },
+        {
+          text: "Ke lijo tse tsoang hae ho ea motebong. E ka ba poone kapa phofo.",
+          author: "Seshoai",
+          image: "./img/lijo/seshoi.jpg"
+        },
+        {
+          text: "Ke bohobe(papa) bo halikiloeng ka mafura.",
+          author: "'Maleboti",
+          image: "./img/lijo/maleboti.jpg"
+        },
+        {
+          text: "Ke kholu ea mokopu e bolila eo ho futsoelang papa ka eona.",
+          author: "Mafi-a-khoho",
+          image: "./img/lijo/mafi.jpg"
+        },
+        {
+          text: "Ke lepu le sokeletsoeng le phoofo.",
+          author: "Senya-ka-mahloana",
+          image: "./img/lijo/senya.jpg"
+        },
+        {
+          text: "Ke likhobe tsa seotlong tse phehoang ha ho olosoa kapa ho poloa.",
+          author: "Nyakafatane",
+          image: "./img/lijo/nyakafatane.jpg"
+        },
+        {
+          text: "Ke maqebekoane a mabele a lehoetla.",
+          author: "Senkhoane",
+          image: "./img/lijo/senkhoane.jpg"
+        },
+        {
+          text: "Ke poone e bonolo ke ineloa kapa ke ho tseteloa ea nto khotholoa ho besoa kapa ho halikoa.",
+          author: "Seantanyane",
+          image: "./img/lijo/seatanyane.jpg"
+        },
+        {
+          text: "Ke nama e phehiloeng hore ebe bono-nolo hore e jeoe ke maqhekoana(batho ba holo)",
+          author: "Lekhotloane",
+          image: "./img/lijo/lekho.jpg"
+        },
+        {
+          text: "Ke mokopu o besitsoeng.",
+          author: "Sebetsoa-butsoane",
+          image: "./img/lijo/sebutsoa.jpg"
+        },
+        {
+          text: "Ke mofuta oa joang bo e kang molula feela litlhaku tsa teng li le kholoanyane.",
+          author: "Moseeka",
+          image: "./img/lijo/moseeka.jpg"
+        },
+        {
+          text: "Ke setlamatlama se nang le kotkloana e joang.",
+          author: "Monakalali",
+          image: "./img/lijo/monakalali.jpeg"
+        },
+        {
+          text: "Ke papasane, theepe, bobatsi, tenane, lenkilini",
+          author: "Meroho",
+          image: "./img/lijo/merotho.jpg"
+        },
+        {
+          text: "Ke phofo ea lithotse tsa mokopu tse halikiloang.",
+          author: "Lehotha",
+          image: "./img/lijo/lehotho.jpg"
+        },
+        {
+          text: "Ke phofo ea litsie(likhopi) tse halikiloeng.",
+          author: "Mokomete",
+          image: "./img/lijo/mokomete.jpg"
+        },
+        {
+          text: "Ke nama e phehiloeng e khabetsoe.",
+          author: "Mokongoane",
+          image: "./img/lijo/mokongone.jpg"
+        },
+        {
+          text: "Ke poone ileng ea ineloa ea nto halikoa e thapile.",
+          author: "Sebera",
+          image: "./img/lijo/seatanyane.jpg"
+        },
+        {
+          text: "Ke mofutsoela oa lits'ifa(moroko) tsa phehiloeng li futsoeloa ka joala.",
+          author: "Mabuketsa",
+          image: "./img/lijo/mabuketsa.jpg"
+        },
+        {
+          text: "Ke bohobe(papa) bo sokeletsoeng le moroho tsa pheuhoa 'moho.",
+          author: "Potele",
+          image: "./img/lijo/potele.jpg"
+        },
+        {
+          text: "Ke bohobe(papa) bo entsoeng ka phofo e haitsoeng.",
+          author: "Bohojoana-masatsaona",
+          image: "./img/lijo/bohojoana.jpg"
+        },
+        {
+          text: "Ke bohobe bo bolila bo phehiloeng ka joala.",
+          author: "Mothoana-helele",
+          image: "./img/lijo/helele.jpg"
+        },
+        {
+          text: "Ke bohobe(papa) ba sallang ka pitseng ha ho bopoa lipolokoe.",
+          author: "Lesokoana",
+          image: "./img/lijo/lesokoana.jpg"
+        },
+        {
+          text: "Ke lijo tse phehoang ke ngoatsi e le hoseng.",
+          author: "Thahameso",
+          image: "./img/lijo/thahameso.jpg"
+        },
+        {
+          text: "Ke bohobe(papa) bo hlakolang leloala bo nto fua lintja.",
+          author: "Mosolotso",
+          image: "./img/lijo/mosolotso.jpg"
+        },
+        {
+          text: "Ke phofo e sokeletsoeng le mokopu oa lephutsi.",
+          author: "Seketsa",
+          image: "./img/lijo/seketsa.jpg"
+        },
+        {
+          text: "Ke mokopu le linaoa le mabele tse pheuoeng 'moho.",
+          author: "Nyekoe",
+          image: "./img/lijo/nyekoe.jpg"
+        },
+
+        // Add more testimonials as needed
+      ];
+
+      let currentIndex = 0;
+
+      function displayTestimonials(startIndex) {
+        const testimonialsContainer = document.getElementById('testimonials');
+        testimonialsContainer.innerHTML = ''; // Clear the container
+
+        for (let i = 0; i < testimonials.length; i++) {
+          const testimonial = testimonials[i];
+          const testimonialElement = document.createElement('div');
+          testimonialElement.classList.add('testimonial-item', 'bg-white', 'rounded-lg', 'shadow-md', 'p-6', 'mt-6', 'block', 'items-center', 'h-[400px]', 'w-full', 'mx-auto', 'md:bg-white', 'md:rounded-md', 'md:shadow-md', 'md:p-6', 'md:flex', 'md:items-center', 'md:w-[600px]', 'h-[300px]',  'lg:bg-white', 'lg:rounded-lg', 'lg:shadow-md', 'lg:flex', 'lg:items-center', 'lg:w-[800px]', 'h-[400px]' );
+          
+          const imgDiv = document.createElement('div');
+          imgDiv.classList.add('flex', 'justify-center', 'md:mr-4', 'lg:mr-4');
+          const img = document.createElement('img');
+          img.src = testimonial.image;
+          img.alt = 'Profile Image';
+          img.classList.add('block', 'rounded-md', 'w-[220px]', 'h-[200px]', 'md:block', 'md:rounded-lg', 'md:w-[260px]', 'md:h-[260px]', 'lg:block', 'lg:rounded-lg', 'lg:w-[360px]', 'lg:h-[360px]', 'xl:block', 'xl:rounded-lg', 'lg:my-10', 'xl:w-[360px]', 'xl:h-[360px]');
+          imgDiv.appendChild(img);
+
+          const textDiv = document.createElement('div');
+          const authorP = document.createElement('p');
+          authorP.classList.add('text-sky-500', 'font-semibold', 'mt-2', 'text-xl', 'text-center', 'md:text-sky-500', 'md:font-semibold', 'md:text-xl', 'md:text-left', 'lg:text-sky-500', 'lg:font-semibold', 'lg:text-2xl', 'lg:text-left');
+          authorP.innerText = testimonial.author;
+
+          const textP = document.createElement('p');
+          textP.classList.add('text-sm', 'w-full', 'text-gray-700', 'text-center', 'md:text-sm', 'md:w-[260px]', 'md:text-left', 'lg:text-base', 'lg:w-[360px]', 'lg:text-left');
+          textP.innerText = testimonial.text;
+
+          textDiv.appendChild(authorP);
+          textDiv.appendChild(textP);
+
+          testimonialElement.appendChild(imgDiv);
+          testimonialElement.appendChild(textDiv);
+          
+          testimonialsContainer.appendChild(testimonialElement);
+        }
+      }
+
+      function showNextTestimonials() {
+        currentIndex = (currentIndex + 1) % testimonials.length;
+        displayTestimonials(currentIndex);
+      }
+      function showBackTestimonials() {
+        currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+        displayTestimonials(currentIndex);
+      }
+
+      window.onload = function() {
+        displayTestimonials(currentIndex);
+        document.getElementById('next-btn').addEventListener('click', showNextTestimonials);
+        document.getElementById('back-btn').addEventListener('click', showBackTestimonials);
+      };
+    </script>
+  </section>
+</body>
+</html>

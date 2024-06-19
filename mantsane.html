@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bakoena ba mantsane</title>
+
+  <link rel="stylesheet" href="output.css" />
+
+</head>
+<body class="bg-gray-100">
+  <section class="h-full bg-gray-100 pt-2
+    md:h-screen md:bg-gray-100
+    lg:h-screen lg:bg-gray-100">
+      <div>
+        <button id="backButton" class="flex items-center justify-center bg-white p-3 ml-2 rounded-md shadow-md shadow-gray-200">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="w-6 h-6 stroke-green-700">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+          </svg>
+        </button>
+      
+        <script>
+          document.getElementById('backButton').addEventListener('click', function() {
+            window.history.back();
+          });
+        </script>
+        <h1 class="text-3xl text-gray-500 font-extrabold text-center pt-8
+        md:text-5xl md:text-gray-500 md:font-extrabold md:text-center md:pt-8
+        lg:text-5xl lg:text-gray-500 lg:font-extrabold lg:text-center lg:pt-8">Bakoena ba <span class="text-green-700">'Mantsane</span></h1>
+        <div id="testimonials" class="container mx-auto pt-10">
+          <div class="grid grid-cols-1 gap-6
+          md:grid md:grid-cols-1 md:gap-6
+          lg:grid lg:grid-cols-1 lg:gap-6">
+            <div id="testimonial1" class="bg-white rounded-lg shadow-md p-6 block items-center h-[400px] w-full mx-auto
+            md:bg-white md:rounded-md md:shadow-md md:shadow-green-600 md:p-6 md:flex md:items-center md:h-[300px] md:w-[600px] md:mx-auto
+            lg:bg-white lg:rounded-lg lg:shadow-md lg:shadow-green-600 lg:flex lg:items-center lg:h-[400px] lg:w-[800px] lg:mx-auto ">
+              <div class="w-full">
+                <p id="testimonial-author1" class="text-green-700 text-center font-semibold text-3xl
+                md:text-green-700 md:font-semibold md:text-4xl md:text-center
+                lg:text-green-700 lg:font-semibold lg:text-4xl lg:text-center"></p>
+                  <p id="testimonial-text1" class="text-xl text-center mt-6"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+      <script>
+        const testimonials = [
+          {
+            text: "Mokoena oa 'Mantsane oa Monakeng, Oa 'Marapitso oa maikhomo A manyane a Monaheng! Motho oa Tsimane'a Lebekoana, Ke le Malekeleke'a Kali, mor'a Tsolo. Makhetha ke Kali, mor'a Monyane, Mor'a Monyane, Mohlomi'a Matsie; O hlomile thebe tseleng. Pitsi ea re: Tsee! Tsee! Makheta! E re tsee, tsee, metsi, e nts'e fula.",
+            author: "Thokelo ea seboko"
+          },
+
+          // Add more testimonials as needed
+        ];
+
+        let currentIndex = 0;
+
+        function displayTestimonials(startIndex) {
+          for (let i = 0; i < 1; i++) {
+            const testimonial = testimonials[startIndex + i];
+            const testimonialElement = document.getElementById(`testimonial${i + 1}`);
+            testimonialElement.querySelector('.text-xl').innerText = testimonial.text;
+            testimonialElement.querySelector('.text-green-700').innerText = " " + testimonial.author;
+          }
+        }
+
+        function showNextTestimonials() {
+          currentIndex = (currentIndex + 1) % testimonials.length;
+          displayTestimonials(currentIndex);
+        }
+        function showBackTestimonials() {
+          currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+          displayTestimonials(currentIndex);
+        }
+
+        window.onload = function() {
+          displayTestimonials(currentIndex);
+          document.getElementById('next-btn').addEventListener('click', showNextTestimonials);
+          document.getElementById('back-btn').addEventListener('click', showBackTestimonials);
+        };
+
+
+      </script>
+    </section>
+  
+</body>
+</html>

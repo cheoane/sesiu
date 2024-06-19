@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liboko</title>
+
+  <link rel="stylesheet" href="output.css" />
+
+  <style>
+    .hidden {
+      display: none;
+    }
+    .scr {
+      overflow-y: auto; /* Make the section scrollable vertically */
+    }
+  </style>
+  
+
+</head>
+<body class="bg-gray-100">
+  <section class="h-full bg-gray-100 pt-2
+    md:h-screen md:bg-gray-100
+    lg:h-screen lg:bg-gray-100">
+    <button id="backButton" class="flex items-center justify-center bg-white p-3 ml-2 rounded-md shadow-md shadow-gray-200">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-6 h-6 stroke-green-700">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+      </svg>
+    </button>
+  
+    <script>
+      document.getElementById('backButton').addEventListener('click', function() {
+        window.history.back();
+      });
+    </script>
+      <div>
+        <div class="flex justify-center">
+          <div class="relative inline-block text-left mt-2">
+            <button type="button" class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-xl font-medium text-gray-700 hover:bg-gray-50" id="options-button" aria-expanded="true" aria-haspopup="true" onclick="toggleDropdown()">
+              Mefuta ea <span id="button-text" class="text-yellow-500 font-extrabold">: Bakoena</span>
+              <svg class="-mr-1 ml-2 mt-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </button>
+            <div class="flex justify-center">
+              <div id="dropdownMenu" class="scr text-center text-base  absolute mt-2 w-56 h-[400px] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden">
+                <div class="py-1" role="none" id="optionsMenu">
+                  <a href="Bafokeng ba mahooana.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Ba Mahooana</a>
+                  <a href="ba molise.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Ba ba Molise</a>
+                  <a href="phole.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Ba 'Mamorareli'a Phole</a>
+                  <a href="makara.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Ba ha Makara</a>
+                  <a href="phahla.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Ba 'Mapulungoan'a Phahla</a>
+                  <a href="lekotoana.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Ba 'Mats'eele oa Lekotoane</a>
+                  <a href="mahase.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Ba Mahase</a>
+                  <a href="ntsukunyane.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Ba 'Mantsukunyane</a>
+                  <a href="tsele.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Ba Ts'ele</a>
+                  <a href="maoto-mane.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Ba Maoto-mane</a>
+                  <a href="molalatsi.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Ba Molalatsi</a>
+                  <a href="mokomana.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Ba Mokomana</a>
+                  <a href="mamorokonyane.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Ba 'Mamorokonyane</a>
+                  <a href="mokhali.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Ba Mokhali</a>
+                  <a href="tsoana.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Ba Ts'oana</a>
+                  <a href="manti.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Ba Manti</a>
+                  <a href="mamaotoana.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Ba 'Mamaotoana</a>
+                  <a href="manti.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Ba ha Manti</a>
+                  <a href="mope.html" class="block px-4 py-2 text-center text-base font-semibold  hover:bg-yelllow-100" role="menuitem">Ba ha Mantia 'Mope</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="testimonials" class="container mx-auto pt-8">
+          <div class="grid grid-cols-1 gap-6
+          md:grid md:grid-cols-1 md:gap-6
+          lg:grid lg:grid-cols-1 lg:gap-6">
+            <div id="testimonial1" class="bg-white rounded-lg shadow-md p-6 block items-center h-[400px] w-full mx-auto
+            md:bg-white md:rounded-md md:shadow-md md:shadow-green-600 md:p-6 md:flex md:items-center md:h-[300px] md:w-[600px] md:mx-auto
+            lg:bg-white lg:rounded-lg lg:shadow-md lg:shadow-green-600 lg:flex lg:items-center lg:h-[400px] lg:w-[800px] lg:mx-auto ">
+            <div class="">
+              <p id="testimonial-author1" class="text-yellow-500 font-semibold text-2xl text-center
+              md:text-yellow-500 md:font-semibold md:text-4xl md:text-left
+              lg:text-yellow-500 lg:font-semibold lg:text-4xl lg:text-left">Bakoena</p>
+              <p id="testimonial-text1" class="text-xl text-green-950 font-semibold w-full text-center
+              md:text-xl md:w-[260px] md:text-green-950 md:font-semibold md:text-left
+              lg:text-xl lg:w-[360px] lg:text-green-950 lg:font-semibold lg:text-left">Koena</p>
+            </div>
+              <div class="flex justify-center mt-10
+              md:mr-4
+              lg:mr-4">
+                <img id="testimonial-image1" src="./img/liboko/kuena.jpg" alt="Profile Image" class="block rounded-md w-[220px] h-[200px]
+                md:block md:rounded-lg md:w-[260px] md:h-[260px]
+                lg:block lg:rounded-lg lg:w-[360px] lg:h-[360px]
+                xl:block xl:rounded-lg lg:my-10 xl:w-[360px] xl:h-[360px]">
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <script>
+      function toggleDropdown() {
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        dropdownMenu.classList.toggle('hidden');
+      }
+    </script>
+  
+</body>
+</html>

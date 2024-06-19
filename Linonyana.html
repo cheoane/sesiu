@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linonyana</title>
+
+  <link rel="stylesheet" href="output.css" />
+
+</head>
+<body class="bg-gray-100">
+  <section class="h-full bg-gray-100 pt-2
+    md:h-screen md:bg-gray-100
+    lg:h-screen lg:bg-gray-100">
+    <button id="backButton" class="flex items-center justify-center bg-white p-3 ml-2 rounded-md shadow-md shadow-gray-200">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-6 h-6 stroke-green-700">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+      </svg>
+    </button>
+  
+    <script>
+      document.getElementById('backButton').addEventListener('click', function() {
+        window.history.back();
+      });
+    </script>
+      <div>
+        <h1 class="text-3xl text-gray-500 font-extrabold text-center pt-8
+        md:text-5xl md:text-gray-500 md:font-extrabold md:text-center md:pt-8
+        lg:text-5xl lg:text-gray-500 lg:font-extrabold lg:text-center lg:pt-8"><span class="text-green-700">Linonyana</span></h1>
+        <div id="testimonials" class="container mx-auto pt-8">
+          <div class="grid grid-cols-1 gap-6
+          md:grid md:grid-cols-1 md:gap-6
+          lg:grid lg:grid-cols-1 lg:gap-6">
+            <div id="testimonial1" class="bg-white rounded-lg shadow-md p-6 block items-center h-[400px] w-full mx-auto
+            md:bg-white md:rounded-md md:shadow-md md:shadow-green-600 md:p-6 md:flex md:items-center md:h-[300px] md:w-[600px] md:mx-auto
+            lg:bg-white lg:rounded-lg lg:shadow-md lg:shadow-green-600 lg:flex lg:items-center lg:h-[400px] lg:w-[800px] lg:mx-auto ">
+            <div class="">
+              <p id="testimonial-author1" class="text-green-700 font-semibold text-2xl text-center
+              md:text-green-700 md:font-semibold md:text-4xl md:text-center md:w-[260px]
+              lg:text-green-700 lg:font-semibold lg:text-4xl lg:text-center lg:w-[360px]"></p>
+              <p id="testimonial-text1" class="text-base w-[160px]
+              md:text-base md:w-[260px]
+              lg:text-base lg:w-[340px]"></p>
+            </div>
+              <div class="flex justify-center mt-8
+              md:mr-4 md:mt-5
+              lg:mr-4 lg:mt-5">
+                <img id="testimonial-image1" src="" alt="Profile Image" class="block rounded-md w-[220px] h-[200px]
+                md:block md:rounded-lg md:w-[260px] md:h-[260px]
+                lg:block lg:rounded-lg lg:w-[360px] lg:h-[360px]
+                xl:block xl:rounded-lg lg:my-10 xl:w-[360px] xl:h-[360px]">
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-between px-4"> 
+            <div class="flex justify-start mt-6">
+              <button id="back-btn" class="bg-green-700 text-white font-bold py-3 px-4 rounded">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                 class="w-6 h-6">
+                 <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                </svg>
+              </button>
+            </div>
+            <div class="flex justify-end mt-6">
+              <button id="next-btn" class="bg-green-700 text-white font-bold py-3 px-4 rounded">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                  class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        
+      <script>
+        const testimonials = [
+          {
+            author: "Lenong",
+            image: "./img/linonyana/lenong.jpg"
+          },
+          {
+            author: "Khaka",
+            image: "./img/linonyana/khaka.jpeg"
+          },
+          {
+            author: "Ntsu",
+            image: "./img/linonyana/Ntsu.jpg"
+          },
+          {
+            author: "Seinoli",
+            image: "./img/linonyana/seinoli.webp"
+          },
+          {
+            author: "Phakoe",
+            image: "./img/linonyana/phakoe.jpg"
+          },
+          {
+            author: "Sephooko",
+            image: "./img/linonyana/sephoko.jpg"
+          },
+          {
+            author: "Kokolofitoe",
+            image: "./img/linonyana/kokolo.jpg"
+          },
+          {
+            author: "Lefokotsana/Lenqebelane",
+            image: "./img/linonyana/lefoko.jpg"
+          },
+          // Add more testimonials as needed
+        ];
+
+        let currentIndex = 0;
+
+        function displayTestimonials(startIndex) {
+          for (let i = 0; i < 1; i++) {
+            const testimonial = testimonials[startIndex + i];
+            const testimonialElement = document.getElementById(`testimonial${i + 1}`);
+            testimonialElement.querySelector('.text-green-700').innerText = " " + testimonial.author;
+            testimonialElement.querySelector('img').src = testimonial.image;
+          }
+        }
+
+        function showNextTestimonials() {
+          currentIndex = (currentIndex + 1) % testimonials.length;
+          displayTestimonials(currentIndex);
+        }
+        function showBackTestimonials() {
+          currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+          displayTestimonials(currentIndex);
+        }
+
+        window.onload = function() {
+          displayTestimonials(currentIndex);
+          document.getElementById('next-btn').addEventListener('click', showNextTestimonials);
+          document.getElementById('back-btn').addEventListener('click', showBackTestimonials);
+        };
+
+
+      </script>
+    </section>
+  
+</body>
+</html>
