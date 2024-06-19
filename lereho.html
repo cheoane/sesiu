@@ -3,65 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lereho</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <title>PDF Viewer</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <style>
-    #pdfViewer {
+    #pdfContainer canvas {
       width: 100%;
-      height: 80vh;
+      height: auto;
     }
   </style>
 </head>
 <body class="bg-gray-100">
-
   <div class="container mx-auto p-4">
-    <h1 class="text-2xl text-yellow-500 font-bold mb-4">Lereho</h1>
-    
-    <div class="mb-4">
-      <select id="pdfSelector" class="form-select block w-full mt-1 text-green-900 font-semibold">
-        <option value="Lereho_sesiu.pdf">Litokomane tsa Sesiu</option>
-        <!-- Add more options as needed -->
-      </select>
-    </div>
-    
-    <div class="flex justify-center mb-4">
-      <button id="downloadButton" class="bg-green-900 text-white px-4 py-2 rounded-md hover:bg-green-700">
+    <div class="flex justify-between items-center mb-4">
+      <h1 class="text-2xl font-bold text-center md:text-3xl lg:text-4xl">PDF Viewer</h1>
+      <button id="downloadButton" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-400 text-sm md:text-base lg:text-lg">
         Download PDF
       </button>
     </div>
-    
-    <div class="bg-white rounded-lg shadow-md p-4">
-      <iframe id="pdfViewer" class="border-0"></iframe>
+    <div id="pdfContainer" class="bg-white rounded-md mx-auto shadow-md p-4 overflow-auto w-full max-w-full md:max-w-3xl lg:max-w-5xl">
+      <!-- PDF viewer will be embedded here -->
     </div>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const pdfSelector = document.getElementById('pdfSelector');
-      const pdfViewer = document.getElementById('pdfViewer');
-      const downloadButton = document.getElementById('downloadButton');
+    const pdfUrl = 'Lereho_sesiu.pdf';
 
-      function loadPDF(pdfUrl) {
-        pdfViewer.src = pdfUrl;
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.worker.min.js';
+
+    let pdfDoc = null;
+    const pdfContainer = document.getElementById('pdfContainer');
+
+    const renderPage = (num) => {
+      pdfDoc.getPage(num).then(page => {
+        const viewport = page.getViewport({ scale: 1 });
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        const renderContext = {
+          canvasContext: context,
+          viewport: viewport
+        };
+
+        page.render(renderContext).promise.then(() => {
+          pdfContainer.appendChild(canvas);
+          // Scroll to the top of the pdfContainer after rendering each page
+          pdfContainer.scrollTop = 0;
+        });
+      });
+    };
+
+    pdfjsLib.getDocument(pdfUrl).promise.then(pdfDoc_ => {
+      pdfDoc = pdfDoc_;
+      for (let i = 1; i <= pdfDoc.numPages; i++) {
+        renderPage(i);
       }
+    });
 
-      pdfSelector.addEventListener('change', (event) => {
-        const selectedPdf = event.target.value;
-        loadPDF(selectedPdf);
-      });
-
-      downloadButton.addEventListener('click', () => {
-        const selectedPdf = pdfSelector.value;
-        const link = document.createElement('a');
-        link.href = selectedPdf;
-        link.download = selectedPdf;
-        link.click();
-      });
-
-      // Load the first PDF by default
-      loadPDF(pdfSelector.value);
+    document.getElementById('downloadButton').addEventListener('click', () => {
+      const link = document.createElement('a');
+      link.href = pdfUrl;
+      link.download = 'document.pdf';
+      link.click();
     });
   </script>
-
 </body>
 </html>
